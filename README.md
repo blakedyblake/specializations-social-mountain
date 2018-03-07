@@ -1,4 +1,4 @@
-<img src="https://devmounta.in/img/logowhiteblue.png" width="250" align="right">
+<img src="https://s3.amazonaws.com/devmountain/readme-logo.png" width="250" align="right">
 
 # Project Summary
 
@@ -34,7 +34,7 @@ In this step, we'll use `axios` to fetch `posts` from the API and render them on
 
 ### Instructions
 
-* Add `axios` to the project using `npm install --save axios`.
+* Add `axios` to the project using `npm install axios`.
 * Open `./src/components/App.js`.
 * Import `axios` into the component.
 * Use `axios` and the API documentation to fetch `posts` in the `componentDidMount` method.
@@ -49,7 +49,7 @@ In this step, we'll use `axios` to fetch `posts` from the API and render them on
 
 <br />
 
-Let's begin by opening a terminal and `cd` into the root of the project. We'll need to add `axios` to our project in order to make API requests. We can do so by running `npm install --save axios`.
+Let's begin by opening a terminal and `cd` into the root of the project. We'll need to add `axios` to our project in order to make API requests. We can do so by running `npm install axios`.
 
 Now let's open `./src/components/App.js` and import `axios` into the component. Near the top of the file with the other import statements, add the following code:
 
@@ -504,7 +504,7 @@ updatePost() {
       <Edit text={ text }
             id={ id } // Remember to destructure id off of props or use this.props.id
             hideEdit={ this.hideEdit }
-            updatePostFn={ updatePostFn } />
+            updatePostFn={ updatePostFn } // This should also be destructured from props or you'll need to reference this.props.updatePostFn />
     :
       <span className="Post__text">{ text }</span>
   }
@@ -869,6 +869,27 @@ createPost() {
 
 Update the project to allow the `Search` bar to find `posts` that contain a certain string. Example: If a user searchs for blue, the Feed of posts should only display posts that contain the word blue. To filter by multiple words be sure to use the `encodeURI` JavaScript function.
 
+## Resources
+
+
+<details>
+
+<summary> <code> Axios </code> </summary>
+
+* [Axios Docs](https://github.com/axios/axios)
+
+</details>
+
+<details>
+
+<summary> <code> Props </code> </summary>
+
+* [React Props](https://www.robinwieruch.de/react-pass-props-to-component/#react-props)
+
+</details>
+
+
+
 ## Contributions
 
 If you see a problem or a typo, please fork, make the necessary changes, and create a pull request so we can review your changes and merge them into the master repo and branch.
@@ -878,5 +899,5 @@ If you see a problem or a typo, please fork, make the necessary changes, and cre
 © DevMountain LLC, 2017. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
 
 <p align="center">
-<img src="https://devmounta.in/img/logowhiteblue.png" width="250">
+<img src="https://s3.amazonaws.com/devmountain/readme-logo.png" width="250">
 </p>
