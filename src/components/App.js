@@ -24,10 +24,10 @@ class App extends Component {
       .then(results=>{
         this.setState({posts: results.data})
       })
-  }
+  }//How is this function working... they're not calling it
 
   updatePost() {
-  
+
   }
 
   deletePost() {
@@ -40,6 +40,7 @@ class App extends Component {
 
   render() {
     const { posts } = this.state;
+     
 
     return (
       <div className="App__parent">
@@ -50,7 +51,7 @@ class App extends Component {
           <Compose />
           {
             posts.map((e)=>(
-              <Post key={e.id}/>
+              <Post key={e.id}date={e.date} text={e.text}/>
             ))
             }
     
