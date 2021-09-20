@@ -26,8 +26,15 @@ class App extends Component {
       })
   }//How is this function working... they're not calling it
 
-  updatePost() {
-
+  updatePost(id,text) {
+    console.log('hello?')
+      axios.put(`https://practiceapi.devmountain.com/api/posts?id=${ id }`,{text}).then((res)=>{
+        this.setState({
+            posts: res.data
+            
+        })
+        console.log(res.data)
+      })
   }
 
   deletePost() {
@@ -51,7 +58,11 @@ class App extends Component {
           <Compose />
           {
             posts.map((e)=>(
-              <Post key={e.id}date={e.date} text={e.text}/>
+              <Post key={e.id}date={e.date} text={e.text}
+                    updatePostFn={this.updatePost}
+                    id = {e.id}
+              
+              />
             ))
             }
     
