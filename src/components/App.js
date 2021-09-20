@@ -37,11 +37,19 @@ class App extends Component {
       })
   }
 
-  deletePost() {
-
+  deletePost(id) {
+    //Also this runs but console.logging doesn't work WHY?
+      axios.delete(`https://practiceapi.devmountain.com/api/posts?id=${id}`).then((res=>{
+        this.setState({
+          posts: res.data
+        })
+      }))
   }
 
-  createPost() {
+  createPost(text) {
+      axios.post('https://practiceapi.devmountain.com/api/posts', {text}).then((res)=>{
+          this.setState({posts: res.data})
+      })
 
   }
 
@@ -55,12 +63,13 @@ class App extends Component {
 
         <section className="App__content">
 
-          <Compose />
+          <Compose      createPostFn = {this.createPost}/>
           {
             posts.map((e)=>(
               <Post key={e.id}date={e.date} text={e.text}
                     updatePostFn={this.updatePost}
                     id = {e.id}
+                    deletePostFn = {this.deletePost}
               
               />
             ))
