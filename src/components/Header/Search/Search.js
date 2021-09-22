@@ -12,7 +12,7 @@ export default class Search extends Component {
       <section className="Search__parent">
 
         <div className="Search__content">
-          <input placeholder="Search Your Feed" />
+          <input placeholder="Search Your Feed" onChange={e=>this.props.filterFn(e.target.value)}/>
 
           <SearchIcon id="Search__icon" />
         </div>
